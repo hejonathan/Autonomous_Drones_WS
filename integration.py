@@ -115,7 +115,8 @@ class FrontEnd(object):
 
             frame = frame_read.frame
             frame, rect = self.notecard_tracker.get_rect(frame)
-            print(f"obj pixels: x:{rect[0]}\t y:{rect[1]}\t size:{rect[2]})")
+            if rect is not None:
+                print(f"obj pixels: x:{rect[0]}\t y:{rect[1]}\t size:{rect[2]})")
 
             frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)  # Commented out to color correct
 
